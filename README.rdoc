@@ -83,9 +83,10 @@ The oauth_consumer should return an OAuth::Consumer which is configured for your
   class UserSession < Authlogic::Session::Base
 
     def self.oauth_consumer
-      OAuth::Consumer.new("TOKEN", "SECRET",
-      { :site=>"http://twitter.com",
-        :authorize_url => "http://twitter.com/oauth/authenticate" })
+      # Please replace consumer key and consumer secret.
+      OAuth::Consumer.new("key", "SECRET",
+      { :site=>"http://api.twitter.com",
+        :authorize_url => "https://api.twitter.com/oauth/authorize" })
     end
 
   end
